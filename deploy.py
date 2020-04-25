@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # API Routes
 @app.route('/', methods=['POST'])
-@cross_origin(['http://localhost:8080/', getenv('APP_HOST', None)])
+@cross_origin(['http://localhost:8080/', getenv('APP_HOST_ONE', None), getenv('APP_HOST_TWO', None)])
 def update_results():
     results = []
 
