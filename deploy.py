@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from os import getenv
 from pprint import pprint
 from datetime import datetime
-from config import NUM_OF_QUESTIONS, HEADER, RESULTS_SHEET_NAME, SPREADSHEET_NAME, QUESTIONS_SHEET_NAME, HEADER, NUM_OF_QUESTIONS
+from config import NUM_OF_QUESTIONS, HEADER, RESULTS_SHEET_NAME, SPREADSHEET_NAME, HEADER, NUM_OF_QUESTIONS
 from flask_cors import cross_origin
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -33,8 +33,8 @@ def update_results():
 
 
 @app.route('/', methods=['GET'])
-def get_questions():
-    return jsonify(get_info())
+def index():
+    return ''
 
 
 # GOOGLE SHEETS API
@@ -62,8 +62,3 @@ with app.app_context():
     def add_results(insertRow):
         sheet = spreadsheet.worksheet(RESULTS_SHEET_NAME)
         sheet.insert_row(insertRow, index=2)
-
-    def get_info():
-        sheet = spreadsheet.worksheet(QUESTIONS_SHEET_NAME)
-        data = sheet.get_all_records()
-        return data
