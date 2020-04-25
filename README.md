@@ -25,7 +25,9 @@ Built using Flask. Uses Google Sheets API.
 - auth_provider_x509_cert_url 
 - client_x509_cert_url
 
-2. Run the following code:
+2. Update config file (config.py) based on preferences.
+
+3. Run the following code:
 ```
 export FLASK_APP=deploy.py
 python -m flask run
