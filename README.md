@@ -25,6 +25,8 @@ Built using Flask. Uses Google Sheets API.
 - auth_provider_x509_cert_url 
 - client_x509_cert_url
 
+If origin(s) is/are not http://localhost:8080/, make host(s) into environment variable(s) as APP_HOST_ONE and/or APP_HOST_TWO.
+
 2. Update config file (config.py) based on preferences.
 
 3. Run the following code:
