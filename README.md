@@ -2,10 +2,9 @@
 
 ## Description
 
-Collects quiz results from the Circuit Breaker Personality Quiz (https://circuit-breaker-personality.herokuapp.com/) and stores them in Google Sheets.
+Collects quiz results from the [Circuit Breaker Personality Quiz](https://circuit-breaker-personality.herokuapp.com/) and stores them in Google Sheets.
 
-The live version can be found here: https://circuit-breaker-quiz.herokuapp.com/
-
+To be set up together with the quiz site ([code](https://github.com/huishun98/trivia-quiz-client.git)).
 
 ## Language, Frameworks and Libraries
 
@@ -13,7 +12,7 @@ Built using Flask. Uses Google Sheets API.
 
 ## Running locally
 
-1. Retrieve from Google Cloud Platform make the following into environmental variables: 
+1. Retrieve from Google Cloud Platform and make the following into environmental variables: 
 - type 
 - project_id
 - private_key_id
