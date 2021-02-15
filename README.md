@@ -12,7 +12,7 @@ Built using Flask. Uses Google Sheets API.
 
 ## Running locally
 
-1. Retrieve from [Google Cloud Platform](https://developers.google.com/sheets/api/quickstart/js) and make the following into environmental variables: 
+1. Enable Google Sheets API at [Google Cloud Platform](https://developers.google.com/sheets/api/quickstart/js), create a [service account](https://cloud.google.com/iam/docs/creating-managing-service-account-keys), and make the following into environmental variables: 
 - type 
 - project_id
 - private_key_id
