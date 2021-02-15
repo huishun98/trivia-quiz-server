@@ -1,5 +1,6 @@
 NUM_OF_QUESTIONS = 8
-SPREADSHEET_NAME = "Trivia Quiz"
-RESULTS_SHEET_NAME = "Sheet2"
+SPREADSHEET_NAME = "Trivia Quiz Demo"
+RESULTS_SHEET_NAME = "Sheet1"
 NUM_OF_OPTIONS = 4
 HEADER = True
+USER_EMAIL = "huishun98@gmail.com"

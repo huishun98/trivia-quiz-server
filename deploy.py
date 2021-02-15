@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from os import getenv
 from pprint import pprint
 from datetime import datetime
-from config import NUM_OF_QUESTIONS, HEADER, RESULTS_SHEET_NAME, SPREADSHEET_NAME, HEADER, NUM_OF_QUESTIONS
+from config import NUM_OF_QUESTIONS, HEADER, RESULTS_SHEET_NAME, SPREADSHEET_NAME, HEADER, NUM_OF_QUESTIONS, USER_EMAIL
 from flask_cors import cross_origin
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
@@ -57,7 +57,14 @@ with app.app_context():
     creds = ServiceAccountCredentials.from_json_keyfile_dict(
         keyfile_dict=creds_json, scopes=scope)
     client = gspread.authorize(creds)
-    spreadsheet = client.open(SPREADSHEET_NAME)
+    try:
+        spreadsheet = client.open(SPREADSHEET_NAME)
+    except:
+        client.create(SPREADSHEET_NAME)
+        spreadsheet = client.open(SPREADSHEET_NAME)
+        client.insert_permission(spreadsheet.id, USER_EMAIL, perm_type='user', role='owner')
+    print("spreadsheet id: {}".format(spreadsheet.id))
+    print("find spreadsheet at: https://docs.google.com/spreadsheets/d/{}".format(spreadsheet.id))
 
     def add_results(insertRow):
         sheet = spreadsheet.worksheet(RESULTS_SHEET_NAME)
