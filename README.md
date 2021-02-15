@@ -12,7 +12,7 @@ Built using Flask. Uses Google Sheets API.
 
 ## Running locally
 
-1. Retrieve from Google Cloud Platform and make the following into environmental variables: 
+1. Retrieve from [Google Cloud Platform](https://developers.google.com/sheets/api/quickstart/js) and make the following into environmental variables: 
 - type 
 - project_id
 - private_key_id
@@ -28,7 +28,14 @@ If origin(s) is/are not http://localhost:8080/, make host(s) into environment va
 
 2. Update config file (config.py) based on preferences.
 
-3. Run the following code:
+3. Create a virtual environment and install required packages by running:
+```
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+4. Run the following code:
 ```
 export FLASK_APP=deploy.py
 python -m flask run
